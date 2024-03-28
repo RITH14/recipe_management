@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recipe Details</title>
+</head>
+<body>
+  <h2>Recipe: {{ recipe.title }}</h2>
+  <p><b>Cuisine:</b> {{ recipe.cuisine }}</p>
+  <p><b>Cooking Time:</b> {{ recipe.cookingTime }} minutes</p>
+  <p><b>Difficulty:</b> {{ recipe.difficultyLevel }}</p>
+  <p><b>Ingredients:</b></p>
+  <ul>
+    <li th:each="ingredient: ${recipe.ingredients}">
+      {{ ingredient.quantity }} {{ ingredient.unit }} {{ ingredient.name }}
+    </li>
+  </ul>
+  <p><b>Instructions:</b></p>
+  <p th:text="${recipe.instructions}"></p>
+  </body>
+</html>
