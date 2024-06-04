@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recipe Management App</title>
+</head>
+<body>
+  <h1>Recipes</h1>
+  <ul>
+    <li th:each="recipe: ${recipes}">
+      <a th:href="@{/recipeDetails/{id}(id=${recipe.id})}">
+        <h3 th:text="${recipe.title}"></h3>
+        <p th:text="${recipe.cuisine}">Cuisine</p>
+        <p th:text="${recipe.cookingTime} + ' minutes'}">Cooking Time</p>
+        <p th:text="${recipe.difficultyLevel}">Difficulty</p>
+      </a>
+    </li>
+  </ul>
+</body>
+</html>
